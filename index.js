@@ -21,11 +21,11 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
     filesAdapter: new S3Adapter(
-      process.env.S3_ACCESS_KEY,
-      process.env.S3_SECRET_KEY,
-      process.env.S3_BUCKET,
+      process.env.S3_ACCESS_KEY || '',
+      process.env.S3_SECRET_KEY || '',
+      process.env.S3_BUCKET || '',
       { directAccess: false}
-    ),
+    )
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
