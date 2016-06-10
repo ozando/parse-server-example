@@ -22,9 +22,9 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
     filesAdapter: new S3Adapter(
-      'AKIAIHNBXJIACFM6JJOQ',
-      'sOd4gHDxXyqQUYRWcXcB3wsNFIXlmop/nt2wL3N4',
-      'cura-userfiles',
+      process.env.S3_ACCESS_KEY,
+      process.env.S3_SECRET_KEY,
+      process.env.S3_BUCKET,
       { directAccess: true}
     )
 });
