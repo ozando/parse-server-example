@@ -22,6 +22,7 @@ var api = new ParseServer({
     android: {
       senderId: process.env.GCM_SENDER_ID,
       apiKey: process.env.GCM_API_KEY
+      }
     },
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
