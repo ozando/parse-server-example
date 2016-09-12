@@ -5,11 +5,11 @@ Parse.Cloud.define('hello', function(req, res) {
 
 Parse.Cloud.define("getCarers", function(request,response)
 {
-    var user = new Parse.User();
-    user.id = request.params.clientid;
+    //var user = new Parse.User();
+    //user.id = request.params.clientid;
     var query = new Parse.Query("Relationship");
-    query.include('clientId');
-    query.equalTo("clientId", user);
+    //query.include('clientId');
+    //query.equalTo("clientId", user);
     query.find(
     {
         success: function(results)
