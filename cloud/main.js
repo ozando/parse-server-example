@@ -5,27 +5,26 @@ Parse.Cloud.define('hello', function(req, res) {
 
 Parse.Cloud.define("getCarers", function(request,response)
 {
-   res.success("Boo");
     //var user = new Parse.User();
     //user.id = request.params.clientid;
-    //var query = new Parse.Query("Relationship");
+    var query = new Parse.Query("Relationship");
     //query.include('clientId');
     //query.equalTo("clientId", user);
-    //query.find(
-    //{
-    //    success: function(results)
-    //    {  var ids = "";
-    //       for ( var i = 0; i < results.length; ++i )
-    //       {
-    //           ids += results[i].get("carerId");
-    //           ids += ",";
-    //       }
-    //       response.success(ids);
-    //    },
-    //    error: function(error)
-    //    {
-    //       console.log(error)
-    //       response.error(error);
-    //    }
-    //});
+    query.find(
+    {
+        success: function(results)
+        {  var ids = "";
+           for ( var i = 0; i < results.length; ++i )
+           {
+               ids += results[i].get("carerId");
+               ids += ",";
+           }
+           response.success(ids);
+        },
+        error: function(error)
+        {
+           console.log(error)
+           response.error(error);
+        }
+    });
 });
