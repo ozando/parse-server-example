@@ -13,11 +13,10 @@ Parse.Cloud.define("getCarers", function(request,response)
     query.find(
     {
         success: function(results)
-        {  var ids = "";
+        {  var ids = [];
            for ( var i = 0; i < results.length; ++i )
            {
-               ids += results[i].get("carerId");
-               ids += ",";
+               ids.push({'carerId':results[i].get('carerId')});
            }
            response.success(ids);
         },
