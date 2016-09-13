@@ -16,7 +16,7 @@ Parse.Cloud.define("getCarers", function(request,response)
         {  var ids = [];
            for ( var i = 0; i < results.length; ++i )
            {
-               ids.push({'carerId':results[i].get('carerId')});
+               ids.push({'carerId':results[i].get("carerId")});
            }
            response.success(ids);
         },
