@@ -5,10 +5,12 @@ Parse.Cloud.define('hello', function(req, res) {
 
 Parse.Cloud.define("getCarers", function(request,response)
 {
+    Parse.Cloud.useMasterKey();
+
     var user = new Parse.User();
     user.id = request.params.clientId;
 
-    console.log("Incoming id = " + request.params.clientId);
+    //console.log("Incoming id = " + request.params.clientId);
 
     var query = new Parse.Query("Relationship");
     //query.include('clientId');
