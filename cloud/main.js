@@ -10,8 +10,6 @@ Parse.Cloud.define("getCarers", function(request,response)
     var user = new Parse.User();
     user.id = request.params.clientId;
 
-    user.id = "buRTQAKNzm";
-
     //console.log("Incoming id = " + request.params.clientId);
 
     var query = new Parse.Query("Relationship");
