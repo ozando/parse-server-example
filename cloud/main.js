@@ -7,6 +7,9 @@ Parse.Cloud.define("getCarers", function(request,response)
 {
     var user = new Parse.User();
     user.id = request.params.clientId;
+
+    console.log("Incoming id = " + request.params.clientId);
+
     var query = new Parse.Query("Relationship");
     //query.include('clientId');
     query.equalTo("clientId", user);
